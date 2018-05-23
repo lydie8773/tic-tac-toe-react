@@ -1,0 +1,15 @@
+version: '3.6'
+services:
+  tic-react:
+    container_name: tic-react
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - '.:/usr/src/app'
+#      - './node_nodules:/usr/src/app/node_modules'
+      - '/usr/src/app/node_modules'
+    ports:
+      - '3003:3000'
+    environment:
+      - NODE_ENV=development
